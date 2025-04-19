@@ -78,7 +78,7 @@ def save_model(model, path):
         Path to save pickle file.
     """
     # TODO: implement the function
-     with open(path, 'wb') as fp: 
+    with open(path, 'wb') as fp: 
         pickle.dump(model, fp)
     
 
