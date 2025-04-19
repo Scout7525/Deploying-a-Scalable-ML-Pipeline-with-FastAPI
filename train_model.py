@@ -1,6 +1,7 @@
 import os
 
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 
 from ml.data import process_data
@@ -12,11 +13,12 @@ from ml.model import (
     save_model,
     train_model,
 )
+
 # TODO: load the cencus.csv data
-project_path = "Your path here"
+project_path = os.getcwd()
 data_path = os.path.join(project_path, "data", "census.csv")
 print(data_path)
-data = None # your code here
+data = pd.read_csv(data_path)
 
 # TODO: split the provided data to have a train dataset and a test dataset
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
