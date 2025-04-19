@@ -65,7 +65,7 @@ def inference(model, X):
     # TODO: implement the function
     preds = model.predict(X)
     return preds
-    pass
+    
 
 def save_model(model, path):
     """ Serializes model to a file.
@@ -80,12 +80,14 @@ def save_model(model, path):
     # TODO: implement the function
      with open(path, 'wb') as fp: 
         pickle.dump(model, fp)
-    pass
+    
 
 def load_model(path):
     """ Loads pickle file from `path` and returns it."""
     # TODO: implement the function
-    pass
+     with open(path, 'rb') as file:
+        return pickle.load(file)
+    
 
 
 def performance_on_categorical_slice(
