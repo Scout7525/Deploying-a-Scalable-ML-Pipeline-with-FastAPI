@@ -42,7 +42,7 @@ async def get_root():
     # your code here
     welcome = {"result": "Say hello!"}
     return welcome
-    
+    pass
 
 
 # TODO: create a POST on a different path that does model inference
