@@ -26,11 +26,11 @@ class Data(BaseModel):
     hours_per_week: int = Field(..., example=40, alias="hours-per-week")
     native_country: str = Field(..., example="United-States", alias="native-country")
 
-path = "../Deploying-a-Scalable-ML-Pipeline-with-FastAPI/model/encoder.pkl" 
-encoder = load_model(path)
+#path = "../Deploying-a-Scalable-ML-Pipeline-with-FastAPI/model/encoder.pkl" 
+encoder = load_model("model/encoder.pkl")
 
-path = "../Deploying-a-Scalable-ML-Pipeline-with-FastAPI/model/model.pkl" 
-model = load_model(path)
+#path = "../Deploying-a-Scalable-ML-Pipeline-with-FastAPI/model/model.pkl" 
+model = load_model("model/model.pkl")
 
 # TODO: create a RESTful API using FastAPI
 app = FastAPI()
@@ -40,13 +40,13 @@ app = FastAPI()
 async def get_root():
     """ Say hello!"""
     # your code here
-    welcome = {"result": "Say hello!"}
+    welcome = {"Say hello!"}
     return welcome
-    pass
+    
 
 
 # TODO: create a POST on a different path that does model inference
-@app.post("/data/")
+@app.post("/data")
 async def post_inference(data: Data):
     # DO NOT MODIFY: turn the Pydantic model into a dict.
     data_dict = data.dict()
